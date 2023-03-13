@@ -1,11 +1,18 @@
-import { Injectable } from '@nestjs/common';
-import { CreateFlashcardDto } from './dto/create-flashcard.dto';
-import { UpdateFlashcardDto } from './dto/update-flashcard.dto';
+import { Injectable } from "@nestjs/common";
+import { CreateFlashcardDto } from "./dto/create-flashcard.dto";
+import { UpdateFlashcardDto } from "./dto/update-flashcard.dto";
 
 @Injectable()
 export class FlashcardService {
   create(createFlashcardDto: CreateFlashcardDto) {
-    return 'This action adds a new flashcard';
+    return "This action adds a new flashcard";
+  }
+
+  /**
+   * Take a first item in the queue.
+   */
+  findNext() {
+    return `This action returns the next flashcard`;
   }
 
   findAll() {

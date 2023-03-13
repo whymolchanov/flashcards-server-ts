@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { FlashcardService } from './flashcard.service';
-import { FlashcardController } from './flashcard.controller';
+import { Module } from "@nestjs/common";
+import { FlashcardService } from "./flashcard.service";
+import { FlashcardController } from "./flashcard.controller";
 
 @Module({
   controllers: [FlashcardController],
-  providers: [FlashcardService]
+  providers: [FlashcardService],
 })
 export class FlashcardModule {}
