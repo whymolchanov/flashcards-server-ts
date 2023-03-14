@@ -1,0 +1,1 @@
+- Installing typeorm and a database driver for PostgreSQL: `npm install --save @nestjs/typeorm typeorm pg`
