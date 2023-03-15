@@ -1,3 +1,4 @@
+// TODO(question): can I use a JS class as an interface/type? If yes, I don't need this file anymore.
 export interface Flashcard {
   questions: string;
   answer: string;
