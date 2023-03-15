@@ -6,6 +6,9 @@ services:
     restart: always
     # TODO(before release): don't store the password here
     environment:
+      POSTGRES_USER: postgres
+      # TODO(before release): add prod db here as well
+      POSTGRES_DB: dev
       POSTGRES_PASSWORD: root
     ports:
       - 5432:5432

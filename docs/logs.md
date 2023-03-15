@@ -1,3 +1,4 @@
 - Installing typeorm and a database driver for PostgreSQL: `npm install --save @nestjs/typeorm typeorm pg`
 - Making a docker-compose.yml file for postgres.
 - Accessing the database via Adminer. Name of service is a server field in Adminer. Example: in docker-compose.yml there is a `services: db:` name. So you have to use it as a "server" field when login to Adminer.
+- Adding a DB creation on the docker-compose up
