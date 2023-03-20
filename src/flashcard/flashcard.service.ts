@@ -12,8 +12,19 @@ export class FlashcardService {
     private flashcardsRepository: Repository<Flashcard>,
   ) {}
 
-  create(dto: CreateFlashcardReqDto) {
-    this.flashcardsRepository.create(dto);
+  async create(dto: CreateFlashcardReqDto) {
+    const flashcard = this.flashcardsRepository.create();
+    flashcard.answer = dto.answer;
+    flashcard.question = dto.question;
+    flashcard.box = "1";
+    flashcard.next_revision = new Date();
+
+    // TODO(improvement): better error handling
+    try {
+      await this.flashcardsRepository.insert(flashcard);
+    } catch (e) {
+      throw new Error();
+    }
   }
 
   /**
