@@ -1,4 +1,4 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateFlashcardDto } from './create-flashcard.dto';
+import { PartialType } from "@nestjs/mapped-types";
+import { CreateFlashcardReqDto } from "./create.flashcard.req.dto";
 
-export class UpdateFlashcardDto extends PartialType(CreateFlashcardDto) {}
+export class UpdateFlashcardDto extends PartialType(CreateFlashcardReqDto) {}

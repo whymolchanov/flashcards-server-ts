@@ -6,9 +6,10 @@ import {
   Patch,
   Param,
   Delete,
+  ValidationPipe,
 } from "@nestjs/common";
 import { FlashcardService } from "./flashcard.service";
-import { CreateFlashcardDto } from "./dto/create-flashcard.dto";
+import { CreateFlashcardReqDto } from "./dto/create.flashcard.req.dto";
 import { UpdateFlashcardDto } from "./dto/update-flashcard.dto";
 
 @Controller("flashcard")
@@ -16,8 +17,8 @@ export class FlashcardController {
   constructor(private readonly flashcardService: FlashcardService) {}
 
   @Post()
-  create(@Body() createFlashcardDto: CreateFlashcardDto) {
-    return this.flashcardService.create(createFlashcardDto);
+  create(@Body(new ValidationPipe()) dto: CreateFlashcardReqDto) {
+    return this.flashcardService.create(dto);
   }
 
   @Get()

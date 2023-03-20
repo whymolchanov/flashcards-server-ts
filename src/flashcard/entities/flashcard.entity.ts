@@ -1,7 +1,8 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { IFlashcard } from "../interfaces/flashcard.interface";
 
 @Entity()
-export class Flashcard {
+export class Flashcard implements IFlashcard {
   @PrimaryGeneratedColumn()
   id: number;
 

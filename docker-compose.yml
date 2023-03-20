@@ -1,5 +1,6 @@
 version: "3"
 
+# TODO(before release): add the Nest.js application to the docker-compose.yml
 services:
   db:
     image: postgres:15

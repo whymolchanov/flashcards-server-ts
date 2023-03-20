@@ -1,11 +1,19 @@
 import { Injectable } from "@nestjs/common";
-import { CreateFlashcardDto } from "./dto/create-flashcard.dto";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import { CreateFlashcardReqDto } from "./dto/create.flashcard.req.dto";
 import { UpdateFlashcardDto } from "./dto/update-flashcard.dto";
+import { Flashcard } from "./entities/flashcard.entity";
 
 @Injectable()
 export class FlashcardService {
-  create(createFlashcardDto: CreateFlashcardDto) {
-    return "This action adds a new flashcard";
+  constructor(
+    @InjectRepository(Flashcard)
+    private flashcardsRepository: Repository<Flashcard>,
+  ) {}
+
+  create(dto: CreateFlashcardReqDto) {
+    this.flashcardsRepository.create(dto);
   }
 
   /**
